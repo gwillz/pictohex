@@ -144,7 +144,7 @@
         const grid = document.getElementById('grid');
 
         const stream = await navigator.mediaDevices.getUserMedia({
-            video: true,
+            video: { facingMode: 'environment' },
             audio: false,
         });
 
