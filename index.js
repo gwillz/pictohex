@@ -112,7 +112,7 @@
             // Hex words.
             for (let j = 0; j < 16; j++) {
                 let word = (chunk[j] || 0) & 0xFF;
-                word = word.toString(16);
+                word = word.toString(16).padStart(2, '0');
 
                 let id = 'd' + (i + j);
                 row.insertAdjacentHTML('beforeend', `<td item='${id}'>${word}</td>`);
