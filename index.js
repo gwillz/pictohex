@@ -17,18 +17,15 @@
         await worker.initialize('eng');
 
         const result = await worker.recognize(buffer);
-        console.log(result.data);
+        // console.log(result.data);
 
         const method = document.querySelector('input[name="method"]:checked');
-        console.log(method);
         display(result.data.text, method.value);
 
         await worker.terminate();
     }
 
     async function update(message) {
-        console.log(message);
-
         const status = document.getElementById('status');
         status.innerHTML = '';
 
@@ -99,8 +96,6 @@
                 table.push(char.charCodeAt(0));
             }
         }
-
-        console.log(table);
 
         const grid = document.getElementById('grid');
         grid.innerHTML = '';
