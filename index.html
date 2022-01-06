@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pictohex</title>
+    <link rel="stylesheet" href="index.css">
+    <script src='https://unpkg.com/tesseract.js'></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="">
+        <h1>Pictohex</h1>
+
+        <video id="video" width="640" height="480" autoplay></video>
+        <canvas id="canvas" width="640" height="480" style="display:none"></canvas>
+
+        <div>
+            <label>
+                <input type="radio" name="method" value="binary">
+                <span>Binary</span>
+            </label>
+            <label>
+                <input type="radio" name="method" value="hex">
+                <span>Hex</span>
+            </label>
+            <label>
+                <input type="radio" name="method" value="base64" checked>
+                <span>Base64</span>
+            </label>
+            <label>
+                <input type="radio" name="method" value="ascii" checked>
+                <span>ASCII</span>
+            </label>
+            <br>
+            <button id="snap">Detect</button>
+            <button id="reset">Reset</button>
+        </div>
+
+        <div id="status"></div>
+
+        <table id="grid"></table>
+    </div>
+</body>
+</html>
