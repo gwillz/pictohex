@@ -5,7 +5,7 @@
 
     Tesseract.setLogging(true);
 
-    const statuses = {};
+    let statuses = {};
 
     async function detect(buffer) {
         const worker = Tesseract.createWorker({
@@ -30,18 +30,18 @@
         status.innerHTML = '';
 
         if (!message) {
-            Object.assign(statuses, {});
+            statuses = {};
         }
         else if (typeof message === 'string') {
-            status.insertAdjacentHTML('beforeend', `<div>${message}</div>`);
+            statuses['error'] = message;
         }
         else {
             const percent = (message.progress * 100).toFixed(0);
             statuses[message.userJobId] = `${message.status} - ${percent}%`;
+        }
 
-            for (let item of Object.values(statuses)) {
-                status.insertAdjacentHTML('beforeend', `<div>${item}</div>`);
-            }
+        for (let item of Object.values(statuses)) {
+            status.insertAdjacentHTML('beforeend', `<div>${item}</div>`);
         }
     }
 
