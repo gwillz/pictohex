@@ -22,16 +22,52 @@ html, body {
     width: 100%;
 }
 
+video {
+    max-width: 100%;
+}
+
 #grid {
-    border-spacing: 0.5ch 0;
+    border-spacing: 0.2ch 0;
     table-layout: fixed;
+    margin: 20px 0;
+}
+
+#grid td:nth-child(1) {
+    background: #eee;
 }
 
 #grid td:nth-child(n+18) {
-    min-width: 1.1ch;
-    width: 1.1ch;
+    background: #eee;
+    min-width: 1ch;
+    width: 1ch;
 }
 
 #grid td.highlight {
-    background: #ccc;
+    background: #ddd;
+}
+
+.scroll {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.controls {
+    font-size: 18pt;
+    margin: 20px 0;
+}
+
+.controls button {
+    font-size: 20pt;
+}
+
+#status div {
+    border-radius: 5px;
+    background: #ddd;
+    margin: 5px 0;
+    padding: 1px 10px;
+}
+
+#status div::before {
+    content: '->';
+    margin-right: 1ch;
 }
